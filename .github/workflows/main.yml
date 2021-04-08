@@ -1,4 +1,4 @@
-name: devops101
+name: devopsaz400
 
 on:
   push:
@@ -7,13 +7,6 @@ on:
   pull_request:
     branches:
       - '*'
-# CONFIGURATION
-# For help, go to https://github.com/Azure/Actions
-#
-# 1. Set up the following secrets in your repository:
-#   AZURE_WEBAPP_PUBLISH_PROFILE
-#
-# 2. Change these variables for your configuration:
 env:
   AZURE_WEBAPP_NAME: devopsgithubcicd    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: 'WebApplication'      # set this to the path to your web app project, defaults to the repository root
@@ -40,4 +33,3 @@ jobs:
           dotnet build --configuration Release
           dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
       
- # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
